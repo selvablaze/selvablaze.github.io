@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selva Subramanian S | Embedded Firmware Engineer</title>
+
+  <!-- Fonts / icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="navbar" role="navigation" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="logo" href="#hero">SELVA</a>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" class="resume-btn" download aria-label="Download resume as PDF">Resume PDF</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- HERO (About integrated, frozen design) -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 class="title">SELVA SUBRAMANIAN S</h1>
+          <p class="subtitle">Embedded Firmware Engineer</p>
+          <p class="tagline">
+            Results-driven Embedded Firmware Engineer with 3.5+ years of end-to-end experience delivering battery-powered IoT and industrial products using Zephyr RTOS, bare-metal C, BLE, LoRa and 4G LTE. Proven expertise in low-power design, sensor integration, board bring-up, and wireless connectivity on several MCU platforms.
+          </p>
+
+          <div class="cta">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+          </div>
+        </div>
+
+        <!-- HERO RIGHT: frame-based layout to keep vector + photo perfectly aligned -->
+        <div class="hero-right" aria-hidden="false" role="img" aria-label="Profile visual">
+          <div class="panel-back" aria-hidden="true"></div>
+          <div class="panel-front" aria-hidden="true"></div>
+
+          <img id="profilePhoto" src="./assets/profile-placeholder.png" alt="Selva" class="profile-photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h3>WORK EXPERIENCE</h3>
+        <div class="job">
+          <div class="job-header">
+            <h4>Embedded Firmware Engineer</h4>
+            <p class="company">Syrma SGS Technology Ltd., Chennai, India</p>
+            <p class="date">Jul 2022 – Present</p>
+          </div>
+          <ul>
+            <li>Designed and delivered production-grade embedded firmware for battery-powered IoT and industrial devices using Zephyr RTOS, FreeRTOS, and bare-metal C</li>
+            <li>Followed Agile methodology through full lifecycle: requirements gathering, system design, prototyping, validation, and mass production handover</li>
+            <li>Collaborated closely with hardware engineers, project managers, and clients to define and refine requirements, ensuring optimal performance and timely delivery</li>
+            <li>Designed high-level system architecture, promoted modular code structure, delegated tasks, and led teams of 2–6 members</li>
+            <li>Worked hand-in-hand with hardware teams to resolve critical integration issues using oscilloscope, logic analyzer, and multimeter — reducing debug time by 40%</li>
+            <li>Conducted extensive hardware validation of sensors, actuators, and wireless modules (BLE, LoRa, 4G LTE)</li>
+            <li>Mentored junior engineers, performed code reviews, managed Git repositories and JIRA workflows</li>
+            <li>Coordinated weekly client status calls, addressed technical queries, and incorporated feedback into product iterations</li>
+            <li>Created comprehensive documentation including design specifications, test plans, and user manuals</li>
+            <li>Supported RF certification (BLE/LoRa), EE testing, and compliance activities</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section id="skills" class="section bg-ivory">
+      <div class="container">
+        <h3>TECHNICAL SKILLS</h3>
+
+        <div class="skills-categories">
+          <div class="skill-box">
+            <i class="fas fa-code"></i>
+            <strong>Languages</strong>
+            <p>Embedded C</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-microchip"></i>
+            <strong>MCUs</strong>
+            <p>nRF52840/832/833, STM32U5/F3/L0, ESP32, S32K144, PIC, MSPM0</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-cogs"></i>
+            <strong>RTOS</strong>
+            <p>Zephyr RTOS, FreeRTOS</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-wifi"></i>
+            <strong>Wireless</strong>
+            <p>BLE, LoRa/LoRaWAN, 4G-LTE, MQTT, FUOTA</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-cloud"></i>
+            <strong>Cloud & Tools</strong>
+            <p>Ubidots, AWS IoT Core, Git/GitHub, JIRA, Segger, STM32CubeIDE, VS Code</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-tools"></i>
+            <strong>Debug & Test</strong>
+            <p>Logic Analyzer, DSO, DMM, Serial Terminal</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-bolt"></i>
+            <strong>Hardware Interfacing</strong>
+            <p>GPIO, ADC, PWM, I2C, SPI, UART, ISR, WDT, DMA</p>
+          </div>
+
+          <div class="skill-box">
+            <i class="fas fa-leaf"></i>
+            <strong>Specializations</strong>
+            <p>Ultra-Low-Power Design, PID Control, Board Bring-up, Production Testing, Agile</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h3>KEY PROJECTS</h3>
+        <p class="disclaimer">*Images are taken from Internet and no copyright intended</p>
+
+        <div class="projects-grid">
+          <div class="project-card" data-modal="kirby"><img src="assets/Kirby-0.png" alt=""><h4>Kirby – Indoor Air Quality Sensor</h4></div>
+          <div class="project-card" data-modal="ultra"><img src="assets/Ultrapaws-0.png" alt=""><h4>Ultra Paws – Pet Health Wearable</h4></div>
+          <div class="project-card" data-modal="rail"><img src="assets/rail-1.png" alt=""><h4>Railway Coupling Controller</h4></div>
+          <div class="project-card" data-modal="heater"><img src="assets/heater-0.png" alt=""><h4>Heater + Peltier Controller</h4></div>
+          <div class="project-card" data-modal="test"><img src="assets/test-0.png" alt=""><h4>Automated Test Fixture</h4></div>
+          <div class="project-card" data-modal="ev"><img src="assets/ev-0.png" alt=""><h4>EV Charging Station Controller</h4></div>
+          <div class="project-card" data-modal="tracker"><img src="assets/tracker-0.png" alt=""><h4>Tracker Control Unit</h4></div>
+          <div class="project-card" data-modal="ulp"><img src="assets/ulp-0.png" alt=""><h4>ULP Pressure Sensor Node</h4></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section bg-ivory">
+      <div class="container">
+        <h3>EDUCATION & ACHIEVEMENTS</h3>
+
+        <div class="education-grid">
+          <div class="education-card">
+            <h4>B.E. Electronics and Communication Engineering</h4>
+            <p>PGP College of Engineering and Technology, Namakkal</p>
+            <p>2018 – 2022 | CGPA: 7.84</p>
+            <!-- <ul> -->
+              <p><em>Awarded Best Outgoing Student of the Department</em></p>
+            <!-- </ul> -->
+          </div>
+
+          <!-- <div class="certs-column"> -->
+            <div class="cert-card">
+              <h4>Certifications & Achievements</h4>
+              <ul>
+                <li>Star Performer of the Quarter – Syrma SGS Technology</li>
+                <li>Rajya Puraskar Awardee – Bharat Scouts & Guides</li>
+                <!-- <li>Zonal Level Throwball Winner</li> -->
+              </ul>
+            <!-- </div> -->
+            <div class="cert-card muted" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section bg-dark">
+      <div class="container text-center">
+        <h3 class="contact-title">GET IN TOUCH</h3>
+        <p class="contact-tagline">Always excited to work on cutting-edge embedded & IoT challenges</p>
+
+        <div class="contact-icons social-big">
+          <a href="https://www.google.com/maps/search/?api=1&query=2,+Periyar+Street,+Tambaram+Sanatorium,+Chennai" target="_blank" title="Address"><i class="fas fa-map-marker-alt"></i></a>
+          <a href="tel:+919952357662" title="+91 9952357662"><i class="fas fa-phone"></i></a>
+          <a href="mailto:get7selva@gmail.com" title="get7selva@gmail.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/selva-blaze" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/selvablaze" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+
+        <p class="contact-footer">© 2025 Selva Subramanian S • Built with passion for embedded systems</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="close" aria-label="Close modal">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
