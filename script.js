@@ -219,3 +219,129 @@ const closeBtn = document.querySelector(".modal .close");
 if (closeBtn) closeBtn.addEventListener("click", closeModal);
 window.addEventListener("click", e => { if(e.target===modal) closeModal(); });
 window.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); });
+
+/* ============================================
+   PROJECTS — VERTICAL SCROLL → HORIZONTAL MOVE
+============================================ */
+
+(() => {
+  const scrollSection = document.querySelector(".projects-scroll");
+  const track = document.querySelector(".projects-track");
+
+  if (!scrollSection || !track) return;
+
+  function updateScroll() {
+    const rect = scrollSection.getBoundingClientRect();
+    const scrollable = track.scrollWidth - window.innerWidth;
+
+    if (scrollable <= 0) return;
+
+    const progress = Math.min(
+      Math.max(-rect.top / (scrollSection.offsetHeight - window.innerHeight), 0),
+      1
+    );
+
+    track.style.transform = `translateX(${-scrollable * progress}px)`;
+  }
+
+  window.addEventListener("scroll", updateScroll, { passive: true });
+  window.addEventListener("resize", updateScroll);
+})();
+
+/* ============================================
+   PROJECTS — ROBUST AUTO + MANUAL CAROUSEL
+============================================ */
+
+(() => {
+  const section = document.getElementById("projects");
+  const viewport = section.querySelector(".projects-viewport");
+  const track = section.querySelector(".projects-track");
+  const btnLeft = section.querySelector(".carousel-btn.left");
+  const btnRight = section.querySelector(".carousel-btn.right");
+
+  if (!viewport || !track) return;
+
+  let autoTimer = null;
+  const originalCards = Array.from(track.children);
+  const gap = 24;
+
+  // Clone for infinite loop
+  originalCards.forEach(card => {
+    track.appendChild(card.cloneNode(true));
+    track.insertBefore(card.cloneNode(true), track.firstChild);
+  });
+
+  const cards = Array.from(track.children);
+
+  function cardWidth() {
+    return cards[0].getBoundingClientRect().width + gap;
+  }
+
+  // Start at first real card
+  let index = originalCards.length;
+  viewport.scrollLeft = index * cardWidth();
+
+  function moveTo(i, smooth = true) {
+    viewport.scrollTo({
+      left: i * cardWidth(),
+      behavior: smooth ? "smooth" : "auto"
+    });
+    index = i;
+  }
+
+  function normalizeIndex() {
+    if (index >= cards.length - originalCards.length) {
+      moveTo(originalCards.length, false);
+    }
+    if (index < originalCards.length) {
+      moveTo(cards.length - originalCards.length * 2, false);
+    }
+  }
+
+  function startAuto() {
+    if (autoTimer) return;
+    autoTimer = setInterval(() => {
+      moveTo(index + 1);
+      setTimeout(normalizeIndex, 400);
+    }, 1000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+
+  // Hover pause
+  viewport.addEventListener("mouseenter", stopAuto);
+  viewport.addEventListener("mouseleave", startAuto);
+
+  // Buttons
+  btnRight.addEventListener("click", () => {
+    stopAuto();
+    moveTo(index + 1);
+    setTimeout(normalizeIndex, 400);
+  });
+
+  btnLeft.addEventListener("click", () => {
+    stopAuto();
+    moveTo(index - 1);
+    setTimeout(normalizeIndex, 400);
+  });
+
+  // Keyboard
+  viewport.tabIndex = 0;
+  viewport.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") btnRight.click();
+    if (e.key === "ArrowLeft") btnLeft.click();
+  });
+
+  // Start auto-scroll only when visible
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) startAuto();
+      else stopAuto();
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
+})();

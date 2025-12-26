@@ -550,4 +550,126 @@ h3{
   margin-bottom: 1.25rem;
 }
 
+/* ============================================
+   PROJECTS — HORIZONTAL SCROLL (IMAGE-DRIVEN)
+============================================ */
+
+/* Outer scroll area */
+.projects-scroll {
+  position: relative;
+  height: 120vh; /* controls scroll duration */
+  overflow: hidden;
+}
+
+/* Sticky track */
+.projects-track {
+  position: sticky;
+  top: 110px; /* below navbar */
+  display: flex;
+  gap: 24px;
+  padding: 20px 5vw;
+  will-change: transform;
+}
+
+/* Card sizing: IMAGE DEFINES WIDTH */
+.projects-track .project-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Image-driven width */
+.projects-track .project-card img {
+  height: 240px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.projects-track .project-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Disable grid behavior if any */
+.projects-track {
+  grid: none !important;
+}
+
+/* ============================================
+   PROJECTS — HORIZONTAL AUTO SCROLL CAROUSEL
+============================================ */
+
+.projects-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projects-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;
+  gap: 24px;
+  will-change: transform;
+}
+
+/* Image-driven card sizing */
+.projects-track .project-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.projects-track .project-card img {
+  height: 220px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Arrow buttons */
+.carousel-btn {
+  background: #fff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+.carousel-btn:focus-visible {
+  outline: 3px solid rgba(255,109,31,0.4);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .carousel-btn {
+    display: none;
+  }
+}
 
