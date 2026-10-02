@@ -388,7 +388,7 @@ window.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); });
   const textEl = document.getElementById("typewriter-text");
   if (!textEl) return;
 
-  const text = `Embedded Firmware Engineer with 3.7+ years of experience building production-grade, low-power IoT and industrial systems from concept to deployment. I specialize in architecting reliable firmware using Zephyr RTOS and bare-metal C, with hands-on expertise in wireless connectivity (BLE, LoRaWAN, LTE), board bring-up, and system-level debugging.
+  const text = `Senior Embedded Firmware Engineer with 4+ years of experience building production-grade, low-power IoT and industrial systems from concept to deployment. I specialize in architecting reliable firmware using Zephyr RTOS and bare-metal C, with hands-on expertise in wireless connectivity (BLE, LoRaWAN, LTE), board bring-up, and system-level debugging.
 I have delivered end-to-end solutions across sensing, communication, and cloud integration—working closely with hardware, QA, and clients to turn complex requirements into robust products. My work includes multi-radio systems, ultra-low-power designs, and safety-critical control applications.
 I also build engineering productivity tools, including Python-based automation and RAG-powered systems for intelligent datasheet analysis, enabling faster development and debugging workflows.`;
 
